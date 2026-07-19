@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Isra Mikraj &amp; Fenomena Ruang-Waktu dalam Al-Qur'an</title>
+<meta name="description" content="Kajian tematik: ayat-ayat paralel, analisis matematis rasio waktu, sumbu kosmik, dimensi interior, dan resonansi sains — dengan protokol pelabelan epistemik." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0A0E1C; --panel:#111731; --line:#22294a; --line2:#3a4370;
+    --brass:#C9A227; --gold:#E7CE8A; --ink:#E9E4D6; --muted:#8A93B0; --dim:#5d6685;
+    --green:#5B8C5A; --blue:#7A9EC2;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.7;font-size:15.5px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 18px}
+  header.hero{padding:64px 0 40px;text-align:center;border-bottom:1px solid var(--line)}
+  .kicker{font-size:11px;letter-spacing:.3em;color:var(--brass);text-transform:uppercase;margin-bottom:14px}
+  h1{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(28px,5vw,44px);margin:0 0 12px;line-height:1.2}
+  .sub{color:var(--muted);font-size:15px;max-width:560px;margin:0 auto}
+  nav.toc{position:sticky;top:0;background:rgba(10,14,28,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+  nav.toc .wrap{display:flex;gap:4px;padding:10px 18px}
+  nav.toc a{color:var(--muted);text-decoration:none;font-size:12px;padding:6px 11px;border-radius:999px;border:1px solid transparent}
+  nav.toc a:hover{color:var(--gold);border-color:var(--line)}
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:'Marcellus',serif;font-weight:400;font-size:26px;color:var(--gold);margin:0 0 6px}
+  .sectnum{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--brass);letter-spacing:.2em;margin-bottom:6px}
+  h3{font-family:'Marcellus',serif;font-weight:400;font-size:19px;color:var(--ink);margin:28px 0 8px}
+  p{margin:12px 0}
+  .arab{font-family:'Amiri',serif;font-size:26px;line-height:2.1;text-align:right;direction:rtl;color:var(--gold);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:18px 0}
+  .terjemah{font-style:italic;color:var(--muted);font-size:14.5px}
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px}
+  th{background:#1F4E5F;color:#fff;text-align:left;padding:9px 10px;font-weight:600}
+  td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
+  tr:nth-child(even) td{background:rgba(234,242,245,.04)}
+  .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .label{display:inline-block;font-size:10px;letter-spacing:.08em;padding:2px 9px;border-radius:999px;border:1px solid var(--line2);color:var(--muted);margin-right:6px;text-transform:uppercase}
+  .label.sahih{border-color:var(--green);color:var(--green)}
+  .label.isyari{border-color:var(--blue);color:var(--blue)}
+  .label.tolak{border-color:#b0605f;color:#c98886}
+  .label.spek{border-color:var(--brass);color:var(--brass)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:16px 0}
+  .formula{font-family:'IBM Plex Mono',monospace;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:13.5px;color:var(--gold);overflow-x:auto}
+  .note{font-size:13px;color:var(--dim);border-left:2px solid var(--brass);padding-left:12px;margin:16px 0}
+  /* Simulator */
+  .simbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin:20px 0}
+  .clock{font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:600;color:var(--gold);text-align:center;letter-spacing:.04em}
+  .ctr{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  button{font-family:inherit;font-size:13px;font-weight:600;border-radius:999px;padding:8px 18px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--muted)}
+  button.primary{background:var(--brass);border-color:var(--brass);color:var(--bg)}
+  button.on{background:var(--line);color:var(--gold)}
+  .framerow{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin-top:9px}
+  .ring{width:38px;height:38px;border-radius:50%;border:1px solid var(--line2);border-top-color:var(--brass);flex-shrink:0;position:relative}
+  .ring span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--muted)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .fr-name{font-family:'Marcellus',serif;font-size:14.5px}
+  .fr-dalil{font-size:9.5px;color:var(--brass);letter-spacing:.06em}
+  .fr-odo{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:600;color:var(--gold)}
+  .fr-sub{font-size:10.5px;color:var(--muted)}
+  #helix3d{width:100%;height:440px;border-radius:14px;border:1px solid var(--line);touch-action:none;background:var(--bg)}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-size:11px;color:var(--muted);margin-top:10px}
+  footer{padding:44px 0 60px;text-align:center;color:var(--dim);font-size:12.5px}
+  footer a{color:var(--muted)}
+  a{color:var(--blue)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Kajian Tematik</div>
+    <h1>Isra Mikraj &amp; Fenomena Ruang&#8209;Waktu dalam Al&#8209;Qur'an</h1>
+    <p class="sub">Ayat-ayat paralel &middot; analisis matematis rasio waktu &middot; sumbu kosmik &middot; dimensi interior &middot; resonansi sains &mdash; dengan protokol pelabelan epistemik pada setiap klaim.</p>
+  </div>
+</header>
+
+<nav class="toc"><div class="wrap">
+  <a href="#ayat">Ayat</a><a href="#paralel">Peristiwa Paralel</a><a href="#spasial">Spasial</a><a href="#sumbu">Sumbu Kosmik</a><a href="#tahqiq">Tahqiq</a><a href="#interior">Interior</a><a href="#matematis">Matematis</a><a href="#lafadz">Lafadz 27:40</a><a href="#taksonomi">Taksonomi</a><a href="#komputasi">Komputasi</a><a href="#simulator">Simulator</a><a href="#geometri">Tamsil Geometris</a><a href="#kerangka">Kerangka</a>
+</div></nav>
+
+<main class="wrap">
+
+<!-- ============ 1. AYAT POKOK ============ -->
+<section id="ayat">
+  <div class="sectnum">BAGIAN 1</div>
+  <h2>Ayat Pokok Isra Mikraj</h2>
+  <div class="arab">سُبْحَٰنَ ٱلَّذِىٓ أَسْرَىٰ بِعَبْدِهِۦ لَيْلًا مِّنَ ٱلْمَسْجِدِ ٱلْحَرَامِ إِلَى ٱلْمَسْجِدِ ٱلْأَقْصَا ٱلَّذِى بَٰرَكْنَا حَوْلَهُۥ لِنُرِيَهُۥ مِنْ ءَايَٰتِنَآ ۚ إِنَّهُۥ هُوَ ٱلسَّمِيعُ ٱلْبَصِيرُ</div>
+  <p class="terjemah">"Maha Suci (Allah) yang telah memperjalankan hamba-Nya pada malam hari dari Masjidilharam ke Masjidilaksa yang telah Kami berkahi sekelilingnya, agar Kami perlihatkan kepadanya sebagian tanda-tanda (kebesaran) Kami." (QS. Al-Isra' [17]: 1)</p>
+  <p>Dimensi <strong>Isra'</strong> (perjalanan horizontal Makkah &rarr; Baitul Maqdis) ditetapkan QS 17:1; dimensi <strong>Mikraj</strong> (kenaikan ke Sidratul Muntaha) dirujuk QS An-Najm 53:13&ndash;18, puncaknya ayat 18: <em>"Sungguh, dia telah melihat sebagian tanda-tanda Tuhannya yang paling besar."</em> Pembukaan <em>subh&#257;na</em> menandai peristiwa <em>kh&#257;riq al-'&#257;dah</em> &mdash; di luar hukum kebiasaan; kata <em>bi-'abdihi</em> (hamba-Nya) dipahami jumhur sebagai jasad + ruh.</p>
+</section>
+
+<!-- ============ 2. PERISTIWA PARALEL ============ -->
+<section id="paralel">
+  <div class="sectnum">BAGIAN 2</div>
+  <h2>Peristiwa-peristiwa Paralel</h2>
+  <p>Al-Qur'an memuat sejumlah peristiwa dengan pola serupa &mdash; perpindahan luar biasa dan kelenturan waktu:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Peristiwa</th><th>Ayat</th><th>Fenomena</th><th>Dimensi</th></tr>
+    <tr><td><strong>Isra Mikraj</strong></td><td>17:1; 53:13&ndash;18</td><td>Makkah &rarr; Baitul Maqdis &rarr; Sidratul Muntaha, satu malam</td><td>Ruang + waktu</td></tr>
+    <tr><td><strong>Sehari = 1.000 thn</strong></td><td>22:47; 32:5</td><td>Rasio waktu di sisi Allah vs manusia</td><td>Waktu antar-alam</td></tr>
+    <tr><td><strong>Sehari = 50.000 thn</strong></td><td>70:4</td><td>Kenaikan malaikat &amp; Ruh</td><td>Waktu (mi'raj malaikat)</td></tr>
+    <tr><td><strong>Ashabul Kahfi</strong></td><td>18:9&ndash;26</td><td>Tidur 309 thn, terasa "sehari atau setengah hari"</td><td>Kompresi subjektif</td></tr>
+    <tr><td><strong>'Uzair</strong></td><td>2:259</td><td>100 thn; makanan utuh, keledai hancur</td><td>Dua laju dalam satu kejadian</td></tr>
+    <tr><td><strong>Singgasana Bilqis</strong></td><td>27:38&ndash;40</td><td>Yaman &rarr; Palestina "sebelum mata berkedip"</td><td>Ruang (perpindahan seketika)</td></tr>
+  </table></div>
+  <p class="note">Hampir semua kisah ini ditutup frasa senada &mdash; <em>linuriyahu min &#257;y&#257;tin&#257;</em> &mdash; tujuannya konsisten: membongkar asumsi bahwa ruang-waktu sehari-hari adalah satu-satunya realitas.</p>
+</section>
+
+<!-- ============ 3. SPASIAL ============ -->
+<section id="spasial">
+  <div class="sectnum">BAGIAN 3</div>
+  <h2>Dimensi Spasial-Geografis</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Lintasan</th><th>Jarak</th><th>Waktu normal era itu</th><th>Waktu dalam ayat</th><th>Kompresi</th></tr>
+    <tr><td>Isra': Makkah &rarr; Yerusalem</td><td>&plusmn;1.230 km</td><td>&plusmn;30&ndash;40 hari kafilah</td><td>Sebagian malam</td><td>&gt;10&sup2;</td></tr>
+    <tr><td>Mikraj: bumi &rarr; Sidratul Muntaha</td><td>Tak terpetakan</td><td>&mdash;</td><td>Malam yang sama</td><td>Di luar metrik</td></tr>
+    <tr><td>Singgasana: Ma'rib &rarr; Yerusalem</td><td>&plusmn;2.070 km</td><td>&plusmn;2 bulan jalur dupa</td><td>Satu kedipan (&plusmn;0,3 dtk)</td><td>&gt;10&#8311;</td></tr>
+    <tr><td>Kahfi (statis)</td><td>0 km</td><td>309 thn eksternal</td><td>Terasa &le;1 hari</td><td>&plusmn;10&#8309;</td></tr>
+    <tr><td>'Uzair (statis)</td><td>0 km</td><td>100 thn eksternal</td><td>Terasa &le;1 hari</td><td>Dua laju simultan</td></tr>
+  </table></div>
+  <p>Dua sumbu berbeda: <strong>horizontal</strong> (terukur dalam kilometer) dan <strong>vertikal/transenden</strong> (di luar koordinat bumi). Dua peristiwa justru statis: anomalinya murni temporal di satu titik geografis.</p>
+</section>
+
+<!-- ============ 4. SUMBU KOSMIK ============ -->
+<section id="sumbu">
+  <div class="sectnum">BAGIAN 4</div>
+  <h2>Sumbu Kosmik: Ka'bah &ndash; Baitul Ma'mur &ndash; Sidratul Muntaha</h2>
+  <p><span class="label sahih">Hadits sahih</span> Bukhari 3207 &amp; Muslim 162: di langit ketujuh Nabi &#65018; melihat <strong>Baitul Ma'mur</strong> &mdash; 70.000 malaikat memasukinya tiap hari dan tidak pernah kembali &mdash; dan Ibrahim AS bersandar padanya: pembangun Ka'bah bumi beristirahat di "Ka'bah langit".</p>
+  <p><span class="label">Atsar mawquf</span> Ali bin Abi Thalib RA (Tafsir Ath-Thabari, QS 52:4): Baitul Ma'mur <em>bi-hiy&#257;l</em> (bertepatan lurus) dengan Ka'bah; "seandainya ia jatuh, ia jatuh tepat di atasnya." Arsitekturnya: Ka'bah (thawaf manusia) &rarr; bait tiap langit &rarr; Baitul Ma'mur (thawaf malaikat) &rarr; Sidratul Muntaha (batas segala yang naik) &rarr; wilayah yang bahkan Jibril tak memasukinya.</p>
+  <p class="note">Kejujuran ilmiah: "tepat di atas" pada bumi bulat berotasi adalah <em>samt</em> simbolik &mdash; korespondensi maqam, bukan koordinat astronomis. Klaim "semua benda langit berputar seperti thawaf" tidak akurat dan sebaiknya tidak dipakai.</p>
+</section>
+
+<!-- ============ 5. TAHQIQ ============ -->
+<section id="tahqiq">
+  <div class="sectnum">BAGIAN 5</div>
+  <h2>Tahqiq Sumber</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Pernyataan</th><th>Status</th><th>Catatan</th></tr>
+    <tr><td>"Ulama pewaris para nabi"</td><td><span class="label sahih">Hadits sahih/hasan</span></td><td>Abu Dawud &amp; Tirmidzi dari Abu Darda' RA</td></tr>
+    <tr><td>Karamah wali (perpindahan)</td><td><span class="label sahih">Diterima Ahlussunnah</span></td><td>Preseden: QS 27:40; atsar "Y&#257; S&#257;riyah, al-jabal!"</td></tr>
+    <tr><td>"Man 'arafa nafsahu..."</td><td><span class="label tolak">Bukan hadits</span></td><td>Aforisme sufi; akar Qur'aninya QS 41:53 (&#257;f&#257;q&ndash;anfus)</td></tr>
+    <tr><td>"Manusia punya tujuh kembaran"</td><td><span class="label tolak">Tanpa nash</span></td><td>Folklor; yang sahih: satu qarin (HR Muslim). Angka 7 kemungkinan dari lath&#257;'if / Martabat Tujuh</td></tr>
+    <tr><td>"Shalat adalah mikraj mukmin"</td><td><span class="label tolak">Bukan hadits</span></td><td>Namun maknanya ditopang fakta sahih: shalat disyariatkan langsung di Mikraj</td></tr>
+  </table></div>
+</section>
+
+<!-- ============ 6. INTERIOR ============ -->
+<section id="interior">
+  <div class="sectnum">BAGIAN 6</div>
+  <h2>Dimensi Interior: Lath&#257;'if &amp; Martabat Tujuh</h2>
+  <p>QS Fushshilat 41:53 menetapkan dua medan &#257;yah paralel: <em>&#257;f&#257;q</em> (kosmos) dan <em>anfus</em> (diri). Tasawuf Naqsyabandiyah merumuskan tujuh <strong>lath&#257;'if</strong> (nafs, qalb, r&#363;h, sirr, khaf&#299;, akhf&#257;, sirr al-sirr); metafisika Nusantara abad 16&ndash;18 merumuskan <strong>Martabat Tujuh</strong> (dari <em>At-Tuhfah al-Mursalah</em> al-Burhanpuri, menyebar ke naskah Melayu, Jawa, Bugis, dan Sasak) dengan manusia sebagai martabat ketujuh yang merangkum semuanya.</p>
+  <p><span class="label isyari">Isy&#257;r&#299;</span> Mikraj melintasi tujuh langit terbaca sebagai peta penyucian tujuh lapisan diri &mdash; mengenal diri adalah mikraj interior. Struktur <em>muntah&#257;</em> muncul dua arah: Sidratul Muntaha (batas kosmos) dan sirr al-sirr (batas ma'rifah).</p>
+  <p class="note">Hipotesis filologis: "tujuh kembaran" dalam folklor kemungkinan degradasi lisan dari Martabat Tujuh. Kesamaan angka 7 dengan dimensi ekstra string theory = kebetulan numerik, bukan korespondensi terbukti.</p>
+</section>
+
+<!-- ============ 7. MATEMATIS ============ -->
+<section id="matematis">
+  <div class="sectnum">BAGIAN 7</div>
+  <h2>Analisis Matematis Dimensi Waktu</h2>
+  <p><strong>Kalibrasi:</strong> "menurut perhitunganmu" = kalender lunar; 1 tahun = 354,367 hari.</p>
+  <div class="formula">R&#8321; = 1.000 &times; 354,367 hari &asymp; 3,54&times;10&#8309;<br>R&#8322; = 50.000 &times; 354,367 hari &asymp; 1,77&times;10&#8311; &nbsp;&nbsp;(R&#8322;/R&#8321; = 50)</div>
+  <h3>Aritmetika tersembunyi</h3>
+  <p>QS 18:25 &mdash; "tiga ratus tahun, ditambah sembilan": <strong>300 tahun surya = 309 tahun lunar</strong> (300&times;365,2425 &divide; 354,367 = 309,2). QS 29:14 &mdash; umur Nuh "seribu tahun kurang lima puluh", dengan dua kata berbeda untuk tahun (<em>sanah</em>/<em>'&#257;m</em>). Dua kali Al-Qur'an memilih operasi hitung alih-alih angka jadi.</p>
+  <h3>Ekuivalen relativistik <span class="label">Ilustrasi fisika</span></h3>
+  <p>Untuk dilatasi &gamma; = R&#8321;: v = c &minus; 1,2 mm/s; energi tubuh 70 kg &asymp; 3.700 tahun konsumsi energi dunia; atau melayang <strong>10 cm di atas horizon Sagittarius A*</strong>. Untuk R&#8322;: v = c &minus; 0,5 &mu;m/s; &asymp; 39 &mu;m dari horizon &mdash; setengah tebal rambut.</p>
+  <h3>Temuan sub-luminal</h3>
+  <p>Singgasana Bilqis: 2.070 km &divide; 0,3 detik = 6.900 km/s &asymp; <strong>2,3% c &mdash; di bawah kecepatan cahaya</strong>. Nash tidak pernah menuntut pelanggaran relativitas untuk peristiwa horizontal.</p>
+  <h3>Pemetaan via redshift <span class="label">Ilustrasi fisika</span></h3>
+  <p>Rasio 1:1.000 menuntut z = 999 &mdash; padahal CMB (tepi semesta teramati) di z &asymp; 1.090: frame ini duduk <strong>tepat di tepi terakhir yang tersinari</strong>. Rasio 1:50.000 menuntut z &asymp; 50.000 &mdash; <strong>di balik tirai plasma</strong>, secara prinsip tak terlihat cahaya. Struktur fisikanya menggemakan hijab-hijab cahaya.</p>
+  <h3>Pola barisan 1 &rarr; 1.000 &rarr; 50.000</h3>
+  <p>Bukan eksponensial tunggal (pengali 1.000 lalu 50 &mdash; meluruh 20&times;); log-konkaf: <span style="font-family:'IBM Plex Mono',monospace;color:var(--gold)">log&#8321;&#8320;S(n) = 3,65n &minus; 0,65n&sup2;</span>. <span class="label spek">Spekulatif 0-df</span> Kurva menuju puncak (~10&#8309;&middot;&sup1;) &mdash; struktur "menuju batas" yang beresonansi dengan nama <em>muntah&#257;</em>. Tiga kurva (parabola, sinus, lingkaran) melewati ketiga titik secara eksak dan baru bercerai setelahnya &mdash; muntah&#257;, siklus, kepulangan: ketiganya motif Qur'ani.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Klaim populer</th><th>Verdict</th></tr>
+    <tr><td>Kecepatan cahaya dari QS 32:5 (Hassab-Elnaby)</td><td><span class="label tolak">Ditolak</span> Perhitungan mentah 335.000 km/s (meleset 12%); koreksi cos 26,9&deg; = post-hoc fitting</td></tr>
+    <tr><td>365 kata <em>yaum</em> / 12 kata <em>syahr</em></td><td><span class="label spek">Metodologi-dependent</span> Sensitif aturan hitung; bukan i'jaz yang berdiri sendiri</td></tr>
+  </table></div>
+</section>
+
+<!-- ============ 8. LAFADZ ============ -->
+<section id="lafadz">
+  <div class="sectnum">BAGIAN 8</div>
+  <h2>Analisis Lafadz QS An-Naml 27:40</h2>
+  <div class="arab">قَالَ ٱلَّذِى عِندَهُۥ عِلْمٌ مِّنَ ٱلْكِتَٰبِ أَنَا۠ ءَاتِيكَ بِهِۦ قَبْلَ أَن يَرْتَدَّ إِلَيْكَ طَرْفُكَ ۚ فَلَمَّا رَءَاهُ مُسْتَقِرًّا عِندَهُۥ قَالَ هَٰذَا مِن فَضْلِ رَبِّى</div>
+  <p class="terjemah">"Berkatalah orang yang mempunyai ilmu dari Kitab: 'Aku akan mendatangkannya kepadamu sebelum matamu kembali kepadamu.' Maka tatkala dilihatnya telah menetap di sisinya, ia berkata: 'Ini termasuk karunia Tuhanku...'"</p>
+  <p><strong>Empat keputusan redaksional:</strong> <em>alladz&#299;</em> (pelaku dianonimkan &mdash; yang penting kualifikasi, bukan identitas); <em>'indah&#363;</em> (ilmu melekat, bukan akses eksternal); <em>'ilmun</em> nakirah (sekelumit tapi dahsyat); <em>minal-kit&#257;b</em> (min partitif: sebagian saja sudah mengalahkan kekuatan penuh jin).</p>
+  <p><strong>Clue struktural:</strong> satuan waktunya <em>round-trip pandangan</em> (tharf + yartadda) &mdash; terindeks pada metrik penglihatan/cahaya, konsisten dengan langkah Buraq (<em>muntah&#257; tharfihi</em>) dan nama Bur&#257;q (akar <em>barq</em>, kilat), serta <em>lamh al-bashar</em> (16:77; 54:50). <em>Mustaqirran</em>: tidak ada transit teramati, hanya keadaan final &mdash; momen mekanisme di-ellipsis. <em>Ka'annahu huwa</em> (27:42): keraguan identitas pasca-transfer yang secara filosofis tepat.</p>
+  <div class="tablewrap"><table>
+    <tr><th></th><th>'Ifrit (27:39)</th><th>Pemilik ilmu (27:40)</th></tr>
+    <tr><td>Kualifikasi</td><td><em>qawiyyun am&#299;n</em> &mdash; paradigma tenaga</td><td><em>'ilmun minal-kit&#257;b</em> &mdash; paradigma informasi</td></tr>
+    <tr><td>Estimasi waktu</td><td>Sebelum bangkit dari majelis (jam)</td><td>Sebelum pandangan kembali (sepersekian detik)</td></tr>
+    <tr><td>Hasil</td><td>&mdash;</td><td>Informasi menang &plusmn;5 orde besaran</td></tr>
+  </table></div>
+  <p><span class="label">Ijtihad</span> Model mekanisme terkuat &mdash; dua lapis: <strong>akses = doa</strong> (riwayat al-ism al-a'zham; menjelaskan <em>h&#257;dz&#257; min fadhli Rabb&#299;</em>), <strong>eksekusi = penciptaan ulang</strong> (i'd&#257;m&ndash;i'&#257;dah, selaras okasionalisme Asy'ariyah / tajd&#299;d al-khalq) &mdash; menjelaskan sekaligus mustaqirran, tharf, dan ka'annahu huwa. Dipegang dengan genggaman longgar: kediaman teks adalah pesan.</p>
+</section>
+
+<!-- ============ 9. TAKSONOMI ============ -->
+<section id="taksonomi">
+  <div class="sectnum">BAGIAN 9</div>
+  <h2>Taksonomi 13 Register Ayat Waktu</h2>
+  <div class="tablewrap"><table>
+    <tr><th>#</th><th>Register</th><th>Ayat kunci</th></tr>
+    <tr><td>1</td><td>Sumpah dengan satuan waktu</td><td>103:1; 89:1&ndash;4; 93:1&ndash;2; 92:1&ndash;2; 91:1&ndash;4</td></tr>
+    <tr><td>2</td><td>Rasio antar-alam</td><td>22:47; 32:5; 70:4; 97:3</td></tr>
+    <tr><td>3</td><td>Kompresi subjektif</td><td>18:19,25; 2:259; 23:112&ndash;114; 20:103&ndash;104; 79:46</td></tr>
+    <tr><td>4</td><td>Keseketikaan ilahi</td><td>54:50; 16:77 (<em>lamh al-bashar aw huwa aqrab</em>)</td></tr>
+    <tr><td>5</td><td>Eksperimen pikiran <em>sarmad</em></td><td>28:71&ndash;72</td></tr>
+    <tr><td>6</td><td>Astronomi sebagai jam kosmik</td><td>10:5; 55:5; 36:38&ndash;40; 21:33; 9:36</td></tr>
+    <tr><td>7</td><td>Pergantian malam-siang</td><td>39:5 (<em>yukawwir</em>); 36:37; 31:29; 25:62</td></tr>
+    <tr><td>8</td><td>Enam "hari" penciptaan</td><td>7:54; 41:9&ndash;12; 57:4</td></tr>
+    <tr><td>9</td><td>Waktu ibadah</td><td>4:103 (<em>kit&#257;ban mawq&#363;tan</em>); 17:78; 11:114</td></tr>
+    <tr><td>10</td><td>Ajal terkunci</td><td>7:34; 63:11; 3:145</td></tr>
+    <tr><td>11</td><td>As-S&#257;'ah &mdash; ketaktahuan</td><td>7:187; 31:34; 33:63</td></tr>
+    <tr><td>12</td><td>Dahr &mdash; bentangan</td><td>76:1; 45:24</td></tr>
+    <tr><td>13</td><td>Waktu biologis</td><td>36:68; 30:54; 29:14; 22:5</td></tr>
+  </table></div>
+  <p><strong>QS 20:103&ndash;104</strong>: yang dibangkitkan <em>berselisih</em> menaksir durasi &mdash; distribusi estimasi, dan akurasinya dikaitkan kualitas ruhani (<em>amtsaluhum thar&#299;qah</em>): persepsi durasi sebagai fungsi keadaan jiwa.</p>
+</section>
+
+<!-- ============ 10. KOMPUTASI ============ -->
+<section id="komputasi">
+  <div class="sectnum">BAGIAN 10</div>
+  <h2>Resonansi Ilmu Komputer &amp; Komputasi Kuantum</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Konsep</th><th>Rumusan</th><th>Resonansi Qur'ani</th><th>Status</th></tr>
+    <tr><td>Suspend/checkpoint</td><td>&Delta;&tau;<sub>guest</sub>=0 saat &Delta;t<sub>host</sub>=T</td><td>Kahfi (18:19); 'Uzair: freeze vs live dalam satu kejadian</td><td>Paling persis</td></tr>
+    <tr><td>Lamport clocks (1978)</td><td>a&rarr;b &rArr; C(a)&lt;C(b); tanpa global clock</td><td>Banyak clock, satu tatanan kausal (tadb&#299;r al-amr)</td><td>Struktural kuat</td></tr>
+    <tr><td>Landauer / Wheeler</td><td>E &ge; kT ln 2 per bit</td><td>Quwwah vs 'ilm (27:39&ndash;40): informasi menang</td><td>Tematik kuat</td></tr>
+    <tr><td>Teleportasi kuantum</td><td>|&psi;&rang;=&alpha;|0&rang;+&beta;|1&rang;; no-cloning</td><td>State bukan materi; resource melekat; sub-luminal; ka'annahu huwa</td><td>Analogi, bukan mekanisme</td></tr>
+    <tr><td>Atomisme diskrit</td><td>t<sub>P</sub>=&radic;(&#295;G/c&#8309;)&asymp;5,4&times;10&#8315;&#8308;&#8308; s</td><td>&#256;n&#257;t kalam; tajd&#299;d al-khalq; mustaqirran = tulis-ulang koordinat</td><td>Struktural; tanz&#299;h dijaga</td></tr>
+    <tr><td>Shor / Grover</td><td>O((log N)&sup3;); O(&radic;N)</td><td>Kompresi via rezim lain, bukan kecepatan</td><td>Analogi pola</td></tr>
+  </table></div>
+  <p class="note">Batas tegas: kemiripan dengan digital physics tidak boleh menjadi teologi simulasi &mdash; Allah bukan "programmer di universe induk"; rumusan itu merusak tanz&#299;h.</p>
+</section>
+
+<!-- ============ 11. SIMULATOR ============ -->
+<section id="simulator">
+  <div class="sectnum">INTERAKTIF I</div>
+  <h2>Simulator Frame Waktu</h2>
+  <p>Satu detak acuan berjalan &mdash; tujuh odometer berlomba pada lajunya masing-masing.</p>
+  <div class="simbox">
+    <div style="text-align:center;font-size:10px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-bottom:4px">Waktu Acuan Berlalu</div>
+    <div class="clock" id="jam">00:00:00.0</div>
+    <div class="ctr">
+      <button class="primary" id="btnMulai">Mulai</button>
+      <button id="btnReset">Reset</button>
+      <button id="l1" class="on">1&times;</button>
+      <button id="l10">10&times;</button>
+      <button id="l60">60&times;</button>
+    </div>
+    <div id="frames"></div>
+    <p class="note" style="margin-top:14px">Ilustratif &mdash; rasio dari tahun lunar 354,367 hari; tampilan memakai tahun surya. Lailatul Qadr = rasio <em>nilai</em>; Kahfi &amp; kiamat-satu-shalat = kompresi subjektif.</p>
+  </div>
+</section>
+
+<!-- ============ 12. GEOMETRI 3D ============ -->
+<section id="geometri">
+  <div class="sectnum">INTERAKTIF II</div>
+  <h2>Tamsil Geometris: Heliks Kerucut</h2>
+  <p>Sinus dan lingkaran adalah dua bayangan dari satu benda: <strong>heliks</strong>. Ditambah konvergensi parabolik (pengali meluruh), ketiganya dapat divisualkan sebagai heliks kerucut yang mengerucut ke satu apeks. Ini <em>tamsil</em> &mdash; perumpamaan visual atas <strong>pola bilangan</strong> yang ditemukan (pengali meluruh, siklus, konvergensi), bukan penggambaran realitas kenaikan itu sendiri; genre yang nash sendiri contohkan: <em>wa tilkal-amts&#257;lu nadhribuh&#257; lin-n&#257;s</em> (QS 29:43). Resonansi diksi <em>yukawwir</em> (39:5) dan <em>ma'&#257;rij</em> (70:3) dicatat sebagai isy&#257;r&#299;.</p>
+  <div id="helix3d"></div>
+  <div class="legend">
+    <span><span style="color:var(--brass)">&#9679;</span> heliks &amp; apeks</span>
+    <span><span style="color:var(--gold)">&#9679;</span> 3 titik data</span>
+    <span><span style="color:var(--green)">&#9679;</span> proyeksi samping = sinus</span>
+    <span><span style="color:var(--blue)">&#9679;</span> proyeksi atas = spiral</span>
+  </div>
+  <p class="note">Seret untuk memutar, scroll/cubit untuk zoom. Lihat tepat dari atas: heliks runtuh jadi lingkaran; tepat dari samping: runtuh jadi gelombang sinus. <span class="label isyari">Tamsil</span> perumpamaan visual atas pola bilangan &mdash; bukan tafsir, bukan penggambaran realitas.</p>
+</section>
+
+<!-- ============ 13. KERANGKA ============ -->
+<section id="kerangka">
+  <div class="sectnum">BAGIAN PENUTUP</div>
+  <h2>Kerangka, Bukan Teori</h2>
+  <p>Kajian ini <strong>tidak</strong> menghasilkan teori ilmiah dalam arti Einstein &mdash; tidak ada prediksi falsifiable; seluruh fisikanya pinjaman; objeknya di luar jangkauan pengukuran berulang. Yang dihasilkan adalah <strong>kerangka interpretif</strong> (segenre okasionalisme al-Ghazali) dengan tiga tesis:</p>
+  <div class="card"><strong>1. Tesis Multi-Frame.</strong> Al-Qur'an memperlakukan waktu sebagai variabel relasional per-frame dengan kausalitas terjaga &mdash; bukan konstanta universal.</div>
+  <div class="card"><strong>2. Tesis Primasi Informasi.</strong> Dalam peristiwa kh&#257;riq, resource operatifnya adalah 'ilm, bukan quwwah &mdash; dan teks menandainya secara gramatikal.</div>
+  <div class="card"><strong>3. Tesis Pendakian Terbatas.</strong> Struktur kenaikan Qur'ani selalu ber-muntah&#257; &mdash; pengali meluruh, hijab bertingkat, batas penyaksian &mdash; bukan divergensi tak hingga.</div>
+  <h3>Protokol pelabelan epistemik (8 tingkat)</h3>
+  <p>Nash qath'i &rarr; hadits (dengan derajat) &rarr; atsar/isr&#257;iliyy&#257;t &rarr; tafsir isy&#257;r&#299; &rarr; ijtihad kajian &rarr; ilustrasi fisika &rarr; spekulatif (0 df) &rarr; ditolak. Setiap klaim dalam kajian ini membawa labelnya &mdash; dan protokol ini diusulkan sebagai standar wacana tafsir-sains.</p>
+  <p class="note">Mengetahui batas bukanlah kekalahan &mdash; ia bernama <em>muntah&#257;</em>.</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Kajian tematik Isra Mikraj &amp; ruang-waktu &middot; dokumen lengkap (17 bagian): <a href="dokumen/Isra_Mikraj_Ruang_Waktu_AlQuran_v12.docx">unduh .docx</a><br>
+    Dibangun dengan disiplin pelabelan epistemik &mdash; <em>linuriyahu min &#257;y&#257;tin&#257;</em>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ================= SIMULATOR ================= */
+(function(){
+  var S_TAHUN=31556952,S_BULAN=2629746,S_HARI=86400,S_JAM=3600,S_MENIT=60;
+  var FRAMES=[
+    {nama:"Frame Manusia",dalil:"acuan 1:1",R:1,per:"1 dtk = 1 dtk"},
+    {nama:"Lailatul Qadr",dalil:"QS 97:3 (rasio nilai)",R:29530,per:"1 dtk \u2248 8,2 jam"},
+    {nama:"Ashabul Kahfi",dalil:"QS 18:25 (subjektif)",R:109573,per:"1 dtk \u2248 1,3 hari"},
+    {nama:"Sehari = 1.000 Thn",dalil:"QS 22:47; 32:5",R:354367,per:"1 dtk \u2248 4,1 hari"},
+    {nama:"Singgasana Bilqis",dalil:"QS 27:40",R:17300000,per:"1 dtk \u2248 6,6 bulan"},
+    {nama:"Sehari = 50.000 Thn",dalil:"QS 70:4",R:17718350,per:"1 dtk \u2248 6,7 bulan"},
+    {nama:"Kiamat \u2013 Satu Shalat",dalil:"hadits (subjektif)",R:2550000000,per:"1 dtk \u2248 80,8 thn"}
+  ];
+  function fmtN(n,d){return n.toLocaleString("id-ID",{maximumFractionDigits:d||0})}
+  function fmtD(s){
+    if(s<=0)return"0 detik";
+    var th=s/S_TAHUN;
+    if(th>=1e9)return fmtN(th/1e9,2)+" miliar thn";
+    if(th>=1e6)return fmtN(th/1e6,2)+" juta thn";
+    if(th>=1000)return fmtN(th)+" tahun";
+    if(th>=1){var b=Math.floor((s%S_TAHUN)/S_BULAN);return fmtN(Math.floor(th))+" thn"+(b?" "+b+" bln":"")}
+    if(s>=S_BULAN){var bl=Math.floor(s/S_BULAN),h=Math.floor((s%S_BULAN)/S_HARI);return bl+" bln"+(h?" "+h+" hr":"")}
+    if(s>=S_HARI){var hr=Math.floor(s/S_HARI),j=Math.floor((s%S_HARI)/S_JAM);return hr+" hari"+(j?" "+j+" jam":"")}
+    if(s>=S_JAM){var jm=Math.floor(s/S_JAM),m=Math.floor((s%S_JAM)/S_MENIT);return jm+" jam"+(m?" "+m+" mnt":"")}
+    if(s>=S_MENIT){var mn=Math.floor(s/S_MENIT),dt=Math.floor(s%S_MENIT);return mn+" mnt"+(dt?" "+dt+" dtk":"")}
+    return fmtN(s,1)+" detik";
+  }
+  var cont=document.getElementById("frames"),odos=[],maxLog=Math.log10(2550000000);
+  FRAMES.forEach(function(f){
+    var lg=Math.log10(Math.max(f.R,1));
+    var row=document.createElement("div");row.className="framerow";
+    row.innerHTML='<div class="ring" data-lg="'+lg+'"><span>10<sup>'+(lg<1?"0":lg.toFixed(1).replace(".0",""))+'</sup></span></div>'+
+      '<div style="flex:1;min-width:0"><div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><span class="fr-name">'+f.nama+'</span><span class="fr-dalil">'+f.dalil+'</span></div>'+
+      '<div class="fr-odo">0 detik</div><div class="fr-sub">'+f.per+'</div></div>';
+    cont.appendChild(row);
+    odos.push({el:row.querySelector(".fr-odo"),ring:row.querySelector(".ring"),R:f.R,lg:lg});
+  });
+  var t=0,jalan=false,laju=1,last=null;
+  var jamEl=document.getElementById("jam"),btnM=document.getElementById("btnMulai");
+  function pad(x){return String(x).padStart(2,"0")}
+  function render(){
+    var h=Math.floor(t/3600),m=Math.floor(t%3600/60),s=Math.floor(t%60),d=Math.floor(t%1*10);
+    jamEl.textContent=pad(h)+":"+pad(m)+":"+pad(s)+"."+d;
+    odos.forEach(function(o){o.el.textContent=fmtD(t*o.R)});
+  }
+  function loop(now){
+    if(last==null)last=now;
+    if(jalan){t+=(now-last)/1000*laju;render()}
+    last=now;requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+  btnM.onclick=function(){jalan=!jalan;btnM.textContent=jalan?"Jeda":(t>0?"Lanjutkan":"Mulai");
+    odos.forEach(function(o){o.ring.style.animation=jalan?("spin "+(8-o.lg/maxLog*7.2)+"s linear infinite"):"none"})};
+  document.getElementById("btnReset").onclick=function(){t=0;jalan=false;btnM.textContent="Mulai";render();
+    odos.forEach(function(o){o.ring.style.animation="none"})};
+  [["l1",1],["l10",10],["l60",60]].forEach(function(p){
+    document.getElementById(p[0]).onclick=function(){laju=p[1];
+      ["l1","l10","l60"].forEach(function(id){document.getElementById(id).className=""});
+      this.className="on"}});
+  render();
+})();
+
+/* ================= HELIKS 3D ================= */
+(function(){
+  var mount=document.getElementById("helix3d");if(!mount||!window.THREE)return;
+  var W=mount.clientWidth,H=mount.clientHeight;
+  var R0=3,YMAX=4.2,K=0.32,OM=2.6,TMAX=13,N=800;
+  function hp(t){var r=R0*Math.exp(-K*t),th=OM*t;
+    return new THREE.Vector3(r*Math.cos(th),YMAX*(1-Math.exp(-K*t)),r*Math.sin(th))}
+  var scene=new THREE.Scene();scene.background=new THREE.Color(0x0a0e1c);
+  scene.fog=new THREE.Fog(0x0a0e1c,14,30);
+  var cam=new THREE.PerspectiveCamera(50,W/H,0.1,100);
+  var ren=new THREE.WebGLRenderer({antialias:true});
+  ren.setSize(W,H);ren.setPixelRatio(Math.min(devicePixelRatio,2));mount.appendChild(ren.domElement);
+  scene.add(new THREE.AmbientLight(0xbfc6e0,0.55));
+  var k1=new THREE.PointLight(0xffe9b0,1.0,60);k1.position.set(6,8,6);scene.add(k1);
+  var k2=new THREE.PointLight(0x7a9ec2,0.5,60);k2.position.set(-7,3,-6);scene.add(k2);
+  var pts=[];for(var i=0;i<=N;i++)pts.push(hp(i/N*TMAX));
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts),600,0.045,10,false),
+    new THREE.MeshStandardMaterial({color:0xc9a227,metalness:0.65,roughness:0.3,emissive:0x3a2e08})));
+  var cone=new THREE.Mesh(new THREE.ConeGeometry(R0,YMAX,48,10,true),
+    new THREE.MeshBasicMaterial({color:0x3a4370,wireframe:true,transparent:true,opacity:0.16}));
+  cone.position.y=YMAX/2;scene.add(cone);
+  var apex=new THREE.Mesh(new THREE.SphereGeometry(0.11,20,20),
+    new THREE.MeshStandardMaterial({color:0xffe9b0,emissive:0xc9a227,emissiveIntensity:1.4}));
+  apex.position.set(0,YMAX,0);scene.add(apex);
+  var halo=new THREE.Mesh(new THREE.SphereGeometry(0.22,20,20),
+    new THREE.MeshBasicMaterial({color:0xc9a227,transparent:true,opacity:0.22}));
+  halo.position.copy(apex.position);scene.add(halo);
+  [0,2.2,4.4].forEach(function(t){
+    var s=new THREE.Mesh(new THREE.SphereGeometry(0.1,18,18),
+      new THREE.MeshStandardMaterial({color:0xe7ce8a,emissive:0x8a6d15,emissiveIntensity:0.9}));
+    s.position.copy(hp(t));scene.add(s)});
+  var grid=new THREE.GridHelper(9,18,0x22294a,0x161c38);scene.add(grid);
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+    pts.map(function(p){return new THREE.Vector3(p.x,0.012,p.z)})),
+    new THREE.LineBasicMaterial({color:0x7a9ec2})));
+  var WZ=-4.4;
+  var wall=new THREE.Mesh(new THREE.PlaneGeometry(9,YMAX+1.2),
+    new THREE.MeshBasicMaterial({color:0x111731,transparent:true,opacity:0.5,side:THREE.DoubleSide}));
+  wall.position.set(0,(YMAX+1.2)/2-0.3,WZ);scene.add(wall);
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+    pts.map(function(p){return new THREE.Vector3(p.x,p.y,WZ+0.01)})),
+    new THREE.LineBasicMaterial({color:0x5b8c5a})));
+  var theta=0.9,phi=1.15,dist=11,target=new THREE.Vector3(0,YMAX*0.45,0),drag=false,lx=0,ly=0,pinch=0;
+  var touches=new Map();
+  function apply(){var sp=Math.sin(phi),cp=Math.cos(phi);
+    cam.position.set(target.x+dist*sp*Math.cos(theta),target.y+dist*cp,target.z+dist*sp*Math.sin(theta));
+    cam.lookAt(target)}
+  var el=ren.domElement;el.style.touchAction="none";
+  el.addEventListener("pointerdown",function(e){drag=true;lx=e.clientX;ly=e.clientY;touches.set(e.pointerId,e);
+    if(touches.size===2){var a=[...touches.values()];pinch=Math.hypot(a[0].clientX-a[1].clientX,a[0].clientY-a[1].clientY)}});
+  el.addEventListener("pointermove",function(e){
+    if(touches.has(e.pointerId))touches.set(e.pointerId,e);
+    if(touches.size===2){var a=[...touches.values()];
+      var d=Math.hypot(a[0].clientX-a[1].clientX,a[0].clientY-a[1].clientY);
+      if(pinch>0)dist=Math.min(24,Math.max(5,dist*pinch/d));pinch=d;return}
+    if(!drag)return;
+    theta+=(e.clientX-lx)*0.006;phi=Math.min(2.6,Math.max(0.25,phi-(e.clientY-ly)*0.006));
+    lx=e.clientX;ly=e.clientY});
+  addEventListener("pointerup",function(e){drag=false;touches.delete(e.pointerId);pinch=0});
+  el.addEventListener("wheel",function(e){e.preventDefault();
+    dist=Math.min(24,Math.max(5,dist*(1+Math.sign(e.deltaY)*0.08)))},{passive:false});
+  var clock=new THREE.Clock();
+  (function loop(){var dt=clock.getDelta();
+    if(!drag)theta+=dt*0.25;
+    halo.scale.setScalar(1+0.18*Math.sin(clock.elapsedTime*2.2));
+    apply();ren.render(scene,cam);requestAnimationFrame(loop)})();
+  addEventListener("resize",function(){var w=mount.clientWidth,h=mount.clientHeight;
+    cam.aspect=w/h;cam.updateProjectionMatrix();ren.setSize(w,h)});
+})();
+</script>
+</body>
+</html>
